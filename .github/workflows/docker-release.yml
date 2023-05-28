@@ -2,7 +2,7 @@ name: Docker Release
 
 on:
   workflow_run:
-    workflows: ["End to End Test", "Unit tests & gosec & lint"]
+    workflows: ["Unit tests & gosec & lint"]
     types:
       - completed
 
