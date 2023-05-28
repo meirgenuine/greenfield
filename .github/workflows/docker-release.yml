@@ -1,12 +1,10 @@
 name: Docker Release
 
 on:
-  push:
-    branches:
-      - master
-      - develop
-    tags: [ "v*.*.*" ]
-  pull_request:
+  workflow_run:
+    workflows: ["End to End Test", "Unit tests & gosec & lint"]
+    types:
+      - completed
 
 env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
